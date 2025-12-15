@@ -1,0 +1,25 @@
+# requirements.txt
+
+# AI/ML Core
+torch
+torchvision
+ultralytics
+sahi
+
+# SAM2 & Config
+sam2
+omegaconf
+hydra-core
+
+# GeoSpatial
+rasterio
+pyproj
+Shapely
+
+# Data & Image
+numpy
+opencv-python
+tqdm
+Pillow
+matplotlib
+tifffile

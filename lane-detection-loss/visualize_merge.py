@@ -20,9 +20,9 @@ CLASS_ID_TO_NAME = {
 NO_DAMAGE_ANALYSIS_CLASSES = ['center_line', 'safety_zone', 'edge_line', 'bus_stop', 'speed_bump']
 
 # 입력/출력 경로
-tif_path = "/home/dromii4/lane/road_cropped.tif"
-json_path = "/home/dromii4/lane/lane-detection-loss/results/final_analysis_results_1205.json"
-output_path = "/home/dromii4/lane/lane-detection-loss/results/visualize_1215.jpg"
+tif_path = "road_cropped.tif"
+json_path = "results/final_results.json"
+output_path = "results/visualize.jpg"
 
 # 이미지 로드
 image_rgb = tifffile.imread(tif_path)

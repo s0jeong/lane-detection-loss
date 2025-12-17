@@ -20,9 +20,9 @@ CLASS_ID_TO_NAME = {
 NO_DAMAGE_ANALYSIS_CLASSES = ['center_line', 'safety_zone', 'edge_line', 'bus_stop', 'speed_bump']
 
 # 입력/출력 경로
-tif_path = "road_cropped.tif"
-json_path = "results/final_results.json"
-output_path = "results/visualize.jpg"
+tif_path = "lane-detection-loss-main/models/road_cropped.tif"
+json_path = "lane-detection-loss-main/lane-detection-loss/results/final_analysis_results.json"
+output_path = "lane-detection-loss-main/lane-detection-loss/results/visualize_lane.jpg"
 
 # 이미지 로드
 image_rgb = tifffile.imread(tif_path)
@@ -60,21 +60,17 @@ for ann in annotations:
     except:
         continue
 
-    # 0.5 이하인 경우 → 시각화 X
-    if damage_ratio <= 0.5:
-        continue
-
     # 분석 제외 클래스는 시각화 X
     if cls_name in NO_DAMAGE_ANALYSIS_CLASSES:
         continue
 
     # polygon points
-    if not ann.get("segmentation_pixel"):
+    if not ann.get("bbox_corners_pixel"):
         continue
-    pts = np.array(ann["segmentation_pixel"], np.int32).reshape((-1, 1, 2))
+    pts = np.array(ann["bbox_corners_pixel"], np.int32).reshape((-1, 1, 2))
 
     # 색상 기준 변경
-    if 0.5 < damage_ratio < 10:
+    if 0.0 <= damage_ratio < 10:
         color = (0, 255, 0)          # 초록
     elif 10 <= damage_ratio <= 20:
         color = (0, 165, 255)        # 주황

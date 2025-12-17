@@ -1,13 +1,13 @@
 # config.py
 
 # --- 1. 경로 설정 ---
-SINGLE_TIF_PATH = 'road_cropped.tif'
+SINGLE_TIF_PATH = 'lane-detection-loss-main/models/road_cropped.tif'
 ORIGINAL_IMAGE_PATH = SINGLE_TIF_PATH
-TILES_DIR = "lane/tiles"
-YOLO_MODEL_PATH = "lane/yolov11L-best.pt"
-SAM_CHECKPOINT_PATH = "lane/models/sam2.1_hiera_base_plus.pt"
-SAM_MODEL_CONFIG = "lane/segment-anything-2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml"
-FINAL_OUTPUT_PATH = "lane/lane-detection-loss/results/final_results.json"
+TILES_DIR = "lane-detection-loss-main/tiles"
+YOLO_MODEL_PATH = "lane-detection-loss-main/models/yolov11L-best.pt"
+SAM_CHECKPOINT_PATH = "lane-detection-loss-main/models/sam2.1_hiera_base_plus.pt"
+SAM_MODEL_CONFIG = "lane-detection-loss-main/models/segment-anything-2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml"
+FINAL_OUTPUT_PATH = "lane-detection-loss-main/lane-detection-loss/results/final_analysis_results.json"
 
 # --- 2. 탐지 및 NMS 파라미터 ---
 DETECTION_CONF_THRESHOLD = 0.35 # 신뢰도 0.35 미만의 탐지는 초기 단계에서 무시
@@ -33,7 +33,7 @@ DAMAGE_CALCULATION_PARAMS = {
 MAX_PIXEL_SAMPLE = 10000
 
 # --- 4. 체크포인트 경로 설정 ---
-CHECKPOINT_DIR = "lane/lane-detection-loss/results/checkpoints"
+CHECKPOINT_DIR = "lane-detection-loss-main/lane-detection-loss/results/checkpoints"
 CHECKPOINT_STEP1_PATH = f"{CHECKPOINT_DIR}/step1_yolo_detections.json"
 CHECKPOINT_STEP2_PATH = f"{CHECKPOINT_DIR}/step2_nms_detection.json"
 CHECKPOINT_STEP3_PATH = f"{CHECKPOINT_DIR}/step3_merged_detections.json"

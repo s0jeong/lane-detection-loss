@@ -7,8 +7,8 @@ from tqdm import tqdm
 from rasterio.windows import Window
 
 # ------------------ 사용자 설정 ------------------
-SOURCE_IMAGE_PATH = "tile_0613_crack_GSD92.tif"  # 원본 GeoTIFF
-OUTPUT_DIR = "lane/tiles"  # 타일 저장 디렉토리
+SOURCE_IMAGE_PATH = "lane-detection-loss-main/models/road_cropped.tif"  # 원본 GeoTIFF
+OUTPUT_DIR = "lane-detection-loss-main/tiles"  # 타일 저장 디렉토리
 TILE_WIDTH = 1280
 TILE_HEIGHT = 1280
 OVERLAP_PERCENT = 30  # % 단위

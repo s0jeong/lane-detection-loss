@@ -1,3 +1,7 @@
+
+폴더 하이라이트
+Python 파일들은 이미지 패치 추출(image_helpers.py) 및 색상/밝기 기반 손상률 비선형 보정 로직을 포함하는 손실률 계산 모듈(damage_calculator.py)을 정의합니다.
+
 # utils/damage_calculator.py
 
 import cv2
